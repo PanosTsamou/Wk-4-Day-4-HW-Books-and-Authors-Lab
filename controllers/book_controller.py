@@ -60,3 +60,13 @@ def delete_book(id):
     print(id)
     book_repo.delete_by_id(int(id))
     return redirect('/books')
+
+@books_blueprint.route('/books/author/<id>/books')
+def get_authors_books(id):
+    all_books = book_repo.select_author(int(id))
+    return render_template('author_books.jinja', books_to_display = all_books)
+
+@books_blueprint.route('/author/<id>/books')
+def get_authors_books2(id):
+    all_books = book_repo.select_author(int(id))
+    return render_template('author_books.jinja', books_to_display = all_books)

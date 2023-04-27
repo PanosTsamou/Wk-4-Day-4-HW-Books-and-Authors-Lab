@@ -22,6 +22,19 @@ def select_all():
         book= Book(row['title'], row['genre'], author, row['id'])
         books.append(book)
     return books
+def select_author(id):
+    books = []
+
+    sql = "SELECT * FROM books WHERE author_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        author = auth_repo.select_by_id(row['author_id'])
+        # author=auth_repo.select_by_id(row['author_id'])
+        book= Book(row['title'], row['genre'], author, row['id'])
+        books.append(book)
+    return books
 
 def select_by_id(id):
     book= None

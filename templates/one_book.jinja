@@ -4,7 +4,7 @@
     <div>
         <h3>{{book.title}}</h3>
         <hr>
-        <p> Author: {{book.author.name}}</p>
+        <p> <a href="author/{{book.author.id}}/books">Author: {{book.author.name}}</a></p>
         <p>Genre: {{book.genre}}</p>
         <p><a href="/books/{{book.id}}/edit">Edit</a></p>
         <form action="/books/{{book.id}}/delete" method="post">
