@@ -14,10 +14,10 @@ def books ():
     books = book_repo.select_all()
     return render_template("books.jinja", books_to_display = books)
 
-@books_blueprint.route('/books/delete/<id>', methods=['POST'])
-def delete_book(id):
-    book_repo.delete_by_id(int(id))
-    return redirect('/books')
+# @books_blueprint.route('/books/delete/<id>', methods=['POST'])
+# def delete_book(id):
+#     book_repo.delete_by_id(int(id))
+#     return redirect('/books')
 
 @books_blueprint.route('/new-book')
 def new_book_form():
@@ -55,8 +55,8 @@ def change_book(id):
     book_repo.update(new_book)
     return redirect('/books')
 
-# @books_blueprint.route('/books/<id>/delete', methods=['POST'])
-# def delete_book(id):
-#     print(id)
-#     book_repo.delete_by_id(int(id))
-#     return redirect('/books')
+@books_blueprint.route('/books/<id>/delete', methods=['POST'])
+def delete_book(id):
+    print(id)
+    book_repo.delete_by_id(int(id))
+    return redirect('/books')
