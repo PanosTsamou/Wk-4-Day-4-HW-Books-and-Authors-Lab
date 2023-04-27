@@ -14,10 +14,10 @@ author_repo.save (author1)
 author2= Author ("George Michael")
 author_repo.save (author2)
 
-book1=Book ("Jurrasic Park", "non- fiction", author1)
+book1=Book ("Jurrasic Park", "non-fiction", author1)
 book_repo.save (book1)
 
-book2=Book ("Jurrasic Park - the playground hunt", "non- fiction", author1)
+book2=Book ("Jurrasic Park - the playground hunt", "non-fiction", author1)
 book_repo.save (book2)
 
 book3=Book ("My story", "Biogrophy", author2)
